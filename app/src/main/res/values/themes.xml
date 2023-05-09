@@ -7,6 +7,7 @@
         <item name="colorPrimary">@color/my_primary</item>
         <item name="colorSecondary">@color/my_secondary</item>
         <item name="android:statusBarColor">@color/my_statusbar</item>
+        <item name="android:textColor">@color/my_text</item>
     </style>
 
     <style name="Theme.OwensAndroidLab" parent="Base.Theme.OwensAndroidLab" />
