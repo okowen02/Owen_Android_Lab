@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="my_primary">#FF669966</color>
+    <color name="my_primary">#BE15E4</color>
     <color name="my_secondary">#FF7766DD</color>
     <color name="my_statusbar">#FF234864</color>
     <color name="my_text">#FF0000</color>
