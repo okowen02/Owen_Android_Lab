@@ -10,15 +10,5 @@
         <item name="android:textColor">@color/my_text</item>
     </style>
 
-
-
-
-
-
-
-
-
-
-
     <style name="Theme.OwensAndroidLab" parent="Base.Theme.OwensAndroidLab" />
 </resources>
