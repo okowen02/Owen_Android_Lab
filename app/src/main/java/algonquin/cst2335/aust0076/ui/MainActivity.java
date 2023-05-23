@@ -49,11 +49,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         model.isSelected.observe(this, selected -> {
-           variableBinding.mycheckbox.setChecked(selected);
-           variableBinding.myswitch.setChecked(selected);
-           variableBinding.myradio.setChecked(selected);
+            variableBinding.mycheckbox.setChecked(selected);
+            variableBinding.myswitch.setChecked(selected);
+            variableBinding.myradio.setChecked(selected);
             Toast toast = Toast.makeText(this, "The value is now: " +selected, Toast.LENGTH_SHORT);
             toast.show();
         });
+
+//        variableBinding.myimage.setOnClickListener( vw -> {
+//            Toast toast = Toast.makeText(this, "This is an image", Toast.LENGTH_SHORT);
+//            toast.show();
+//        });
+
+        variableBinding.myimagebutton.setOnClickListener( vw -> {
+            Toast toast = Toast.makeText(this, "Width = " + vw.getMeasuredWidth() + ", Height = " + vw.getMeasuredHeight(), Toast.LENGTH_SHORT);
+            toast.show();
+        });
+
     }
 }
