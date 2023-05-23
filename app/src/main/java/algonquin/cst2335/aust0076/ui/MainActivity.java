@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import algonquin.cst2335.aust0076.data.MainViewModel;
 import algonquin.cst2335.aust0076.databinding.ActivityMainBinding;
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
            variableBinding.mycheckbox.setChecked(selected);
            variableBinding.myswitch.setChecked(selected);
            variableBinding.myradio.setChecked(selected);
-
+            Toast toast = Toast.makeText(this, "The value is now: " +selected, Toast.LENGTH_SHORT);
+            toast.show();
         });
     }
 }
