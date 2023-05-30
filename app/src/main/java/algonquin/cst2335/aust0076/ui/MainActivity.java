@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
             toast.show();
         });
 
-//        variableBinding.myimage.setOnClickListener( vw -> {
-//            Toast toast = Toast.makeText(this, "This is an image", Toast.LENGTH_SHORT);
-//            toast.show();
-//        });
+        variableBinding.myimage.setOnClickListener( vw -> {
+            Toast toast = Toast.makeText(this, "This is an image", Toast.LENGTH_SHORT);
+            toast.show();
+        });
 
         variableBinding.myimagebutton.setOnClickListener( vw -> {
             Toast toast = Toast.makeText(this, "Width = " + vw.getMeasuredWidth() + ", Height = " + vw.getMeasuredHeight(), Toast.LENGTH_SHORT);

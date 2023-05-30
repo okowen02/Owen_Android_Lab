@@ -45,11 +45,11 @@
         android:layout_height="wrap_content"
         android:text="@string/radio"/>
 
-<!--    <ImageView-->
-<!--        android:id="@+id/myimage"-->
-<!--        android:src="@drawable/ac_logo"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
+    <ImageView
+        android:id="@+id/myimage"
+        android:src="@drawable/ac_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <ImageButton
         android:id="@+id/myimagebutton"
