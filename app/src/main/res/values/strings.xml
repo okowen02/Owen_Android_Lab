@@ -2,4 +2,8 @@
     <string name="app_name">Owen\'s Android Lab</string>
     <string name="hello_message">Hello World!</string>
     <string name="button_message">I\'m a button</string>
+    <string name="emailText">Enter your email address:</string>
+    <string name="emailInput">Type email here</string>
+    <string name="passwordText">Type your password</string>
+    <string name="loginButton">Login</string>
 </resources>
