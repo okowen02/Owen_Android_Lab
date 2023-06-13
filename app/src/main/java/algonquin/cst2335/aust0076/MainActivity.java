@@ -2,7 +2,9 @@ package algonquin.cst2335.aust0076;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -10,7 +12,9 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static String TAG = "MainActivity";
+    private static final String TAG = "MainActivity";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +22,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.w( TAG, "In onCreate() - Loading Widgets" );
 
+        SharedPreferences prefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
         Button loginButton = findViewById(R.id.loginButton);
         EditText emailInput = findViewById(R.id.emailInput);
+
+        String emailAddress = prefs.getString("LoginName", "");
+        emailInput.setText(emailAddress);
 
         loginButton.setOnClickListener(clk -> {
             Intent nextPage = new Intent(MainActivity.this, SecondActivity.class);
             nextPage.putExtra( "EmailAddress", emailInput.getText().toString() );
+            editor.putString("LoginName", emailInput.getText().toString());
+            editor.apply();
             startActivity(nextPage);
         });
+
     }
 
     @Override
