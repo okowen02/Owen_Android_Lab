@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Message goes here"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/imageMessage"
+        app:layout_constraintEnd_toStartOf="@+id/imageMessage2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -19,17 +19,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Time goes here"
-        android:textAlignment="viewEnd"
         android:textColor="#575757"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/imageMessage"
+        app:layout_constraintEnd_toStartOf="@+id/imageMessage2"
         app:layout_constraintTop_toBottomOf="@+id/message" />
 
     <ImageView
-        android:id="@+id/imageMessage"
+        android:id="@+id/imageMessage2"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginStart="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/send_image" />
+        app:srcCompat="@drawable/recieve_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>
