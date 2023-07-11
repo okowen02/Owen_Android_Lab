@@ -1,7 +1,8 @@
-package algonquin.cst2335.aust0076;
+package algonquin.cst2335.aust0076.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import algonquin.cst2335.aust0076.R;
+import algonquin.cst2335.aust0076.data.ChatRoomViewModel;
 import algonquin.cst2335.aust0076.databinding.ActivityChatRoomBinding;
 import algonquin.cst2335.aust0076.databinding.SentMessageBinding;
 
@@ -19,12 +22,20 @@ public class ChatRoom extends AppCompatActivity {
 
     ActivityChatRoomBinding binding;
     ArrayList<String> messages = new ArrayList<>();
+    ChatRoomViewModel chatModel;
     private RecyclerView.Adapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
+
+        chatModel = new ViewModelProvider(this).get(ChatRoomViewModel.class);
+        messages = chatModel.messages.getValue();
+
+        if(messages == null) {
+            chatModel.messages.postValue( messages = new ArrayList<String>());
+        }
 
         binding = ActivityChatRoomBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
