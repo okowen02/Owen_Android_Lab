@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import android.os.Bundle;
 import android.view.View;
@@ -126,9 +129,16 @@ public class ChatRoom extends AppCompatActivity {
         }
     }
 
+    @Entity
     public class ChatMessage {
+        @PrimaryKey (autoGenerate = true)
+        @ColumnInfo (name = "id")
+        public int id;
+        @ColumnInfo(name="message")
         String message;
+        @ColumnInfo(name = "TimeSent")
         String timeSent;
+        @ColumnInfo(name = "SendOrReceive")
         boolean isSentButton;
 
         public ChatMessage(String m, String t, boolean sent){
