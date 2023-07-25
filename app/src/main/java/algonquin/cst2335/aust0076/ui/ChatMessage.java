@@ -26,6 +26,7 @@ public class ChatMessage {
 
     }
 
+    long getID() {return id;}
     String getMessage() { return message; }
     String getTimeSent() { return timeSent; }
     boolean getIsSentButton() { return isSentButton; }

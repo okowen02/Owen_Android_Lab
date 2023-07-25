@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/databaseDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="database id goes here"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/sendReceiveDetails"
+        app:layout_constraintTop_toBottomOf="@+id/sendReceiveDetails" />
+
+    <TextView
+        android:id="@+id/sendReceiveDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="send receive goes here"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/timeDetails"
+        app:layout_constraintTop_toBottomOf="@+id/timeDetails" />
+
+    <TextView
+        android:id="@+id/timeDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="time goes here"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/messageDetails"
+        app:layout_constraintTop_toBottomOf="@+id/messageDetails" />
+
+    <TextView
+        android:id="@+id/messageDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="message  goes here"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
