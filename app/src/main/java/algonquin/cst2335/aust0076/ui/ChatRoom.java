@@ -140,6 +140,10 @@ public class ChatRoom extends AppCompatActivity {
         });
 
         binding.recycleView.setLayoutManager(new LinearLayoutManager(this));
+
+        chatModel.selectedMessage.observe(this, (newMessageValue) -> {
+
+        });
     }
 
     class MyRowHolder extends RecyclerView.ViewHolder {
@@ -151,26 +155,29 @@ public class ChatRoom extends AppCompatActivity {
 
             itemView.setOnClickListener(clk -> {
                 int pos = getAbsoluteAdapterPosition();
-                AlertDialog.Builder builder = new AlertDialog.Builder( ChatRoom.this );
-                builder.setMessage("Do you want to delete the message: " + messageText.getText())
-                    .setTitle("Question:")
-                    .setPositiveButton("Yes", (dialog, cl) -> {
-                        ChatMessage m = messages.get(pos);
-                        Executor t = Executors.newSingleThreadExecutor();
-                        t.execute(() -> {
-                            mDAO.deleteMessage(m);
-                        });
-                        messages.remove(pos);
-                        myAdapter.notifyItemRemoved(pos);
-                        Snackbar.make(messageText, "This message has been deleted.", Snackbar.LENGTH_LONG)
-                                .setAction("Undo", c -> {
-                                    messages.add(pos, m);
-                                    myAdapter.notifyItemInserted(pos);
-                                })
-                                .show();
-                    })
-                    .setNegativeButton("No", (dialog, cl) -> {})
-                    .create().show();
+                ChatMessage selected = messages.get(pos);
+
+                chatModel.selectedMessage.postValue(selected);
+//                AlertDialog.Builder builder = new AlertDialog.Builder( ChatRoom.this );
+//                builder.setMessage("Do you want to delete the message: " + messageText.getText())
+//                    .setTitle("Question:")
+//                    .setPositiveButton("Yes", (dialog, cl) -> {
+//                        ChatMessage m = messages.get(pos);
+//                        Executor t = Executors.newSingleThreadExecutor();
+//                        t.execute(() -> {
+//                            mDAO.deleteMessage(m);
+//                        });
+//                        messages.remove(pos);
+//                        myAdapter.notifyItemRemoved(pos);
+//                        Snackbar.make(messageText, "This message has been deleted.", Snackbar.LENGTH_LONG)
+//                                .setAction("Undo", c -> {
+//                                    messages.add(pos, m);
+//                                    myAdapter.notifyItemInserted(pos);
+//                                })
+//                                .show();
+//                    })
+//                    .setNegativeButton("No", (dialog, cl) -> {})
+//                    .create().show();
             });
 
             messageText = itemView.findViewById(R.id.message);
