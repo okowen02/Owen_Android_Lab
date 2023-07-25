@@ -24,11 +24,11 @@ public class MessageDetailsFragment extends Fragment {
 
         DetailsLayoutBinding binding = DetailsLayoutBinding.inflate(inflater);
 
-        binding.messageDetails.setText(selected.message);
-        binding.timeDetails.setText(selected.timeSent);
-        if(selected.isSentButton) binding.sendReceiveDetails.setText("Sent");
+        binding.messageDetails.setText(selected.getMessage());
+        binding.timeDetails.setText(selected.getTimeSent());
+        if(selected.getIsSentButton()) binding.sendReceiveDetails.setText("Sent");
         else binding.sendReceiveDetails.setText("Received");
-        binding.databaseDetails.setText("ID = " + selected.id);
+        binding.databaseDetails.setText("ID = " + String.valueOf(selected.getID()));
 
         return binding.getRoot();
     }
